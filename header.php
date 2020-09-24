@@ -38,18 +38,8 @@
             </button>
 
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Page 1</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Page 2</a>
-                    </li>
-                </ul>
-                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
                         <a class="nav-link" href="#">About</a>
                     </li>
@@ -60,10 +50,29 @@
                         <a class="nav-link" href="#">Blog</a>
                     </li>
                 </ul>
+
+                <ul class="navbar-nav ml-auto">
+                    <?php 
+                    $menu = wp_get_nav_menu_items("Sociale Menu");
+                    $menu_items = $menu ? $menu : array();
+
+                    foreach ($menu_items as $item): ?>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="<?= $item->url ?>" target="<?= $item->target ?>"><?= $item->title ?></a>
+                    </li>
+
+                    <?php endforeach; ?>
+                </ul>
+
             </div>
         </nav>
     </header>
 
+
+    <?php 
+    var_dump( wp_get_nav_menu_items("Sociale Menu") ) 
+    ?>
 
     <!-- Contenu du site -->
     <div class="main-content">
