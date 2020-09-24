@@ -11,5 +11,13 @@
 
 //======================================================================
 ?>
+    </div>
 
-Footer
+
+    <!-- Pied de page -->
+    <footer class="main-footer">
+        footer
+    </footer>
+
+</body>
+</html>
