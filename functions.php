@@ -85,7 +85,7 @@ function doOnSwitchTheme()
             'menu-item-url' => "http://facebook.com",       // URL du lien
             'menu-item-target' => "_blank",                 // Attribut "target" de la balise <a>
             'menu-item-classes' => "nav-item",              // Valeur de l'attribut class
-            'menu-item-status' => "publish",                // Statu du lien "draft" ou "publish".
+            'menu-item-status' => "publish",                // Status du lien "draft" ou "publish".
             'menu-item-position' => 3,                      // Position du lien dans le menu
             'menu-item-type' => "custom"                    // Précise à WP que le lien est un lien personnalisé
         ]);
