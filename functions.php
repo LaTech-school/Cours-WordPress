@@ -58,6 +58,46 @@ function doOnInit()
         // active la gestion des menus
         register_nav_menu("fake-manu", "Fake menu");
     }
+
+
+
+    // Création du post peersonnalisé
+
+    $labels = array(
+		// Le nom au pluriel
+		'name'                => _x( 'Séries TV', 'Post Type General Name'),
+		// Le nom au singulier
+		'singular_name'       => _x( 'Série TV', 'Post Type Singular Name'),
+		// Le libellé affiché dans le menu
+		'menu_name'           => __( 'Séries TV'),
+		// Les différents libellés de l'administration
+		'all_items'           => __( 'Toutes les séries TV'),
+		'view_item'           => __( 'Voir les séries TV'),
+		'add_new_item'        => __( 'Ajouter une nouvelle série TV'),
+		'add_new'             => __( 'Ajouter une serie !'),
+		'edit_item'           => __( 'Editer la séries TV'),
+		'update_item'         => __( 'Modifier la séries TV'),
+		'search_items'        => __( 'Rechercher une série TV'),
+		'not_found'           => __( 'Non trouvée'),
+		'not_found_in_trash'  => __( 'Non trouvée dans la corbeille'),
+	);
+
+
+    $args = [
+        'label' => "Série TV",
+        'description' => "Description de mon type de post",
+        'labels' => $labels,
+
+		'supports' => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields', ),
+
+		'hierarchical' => false,
+		'public' => true,
+		'has_archive' => true,
+		'rewrite' => array( 'slug' => 'series-tv'),
+    ];
+
+	// On enregistre notre custom post type qu'on nomme ici "serietv" et ses arguments
+	register_post_type('seriestv', $args );
 }
 add_action('init', "doOnInit");
 
@@ -189,8 +229,6 @@ function doOnSwitchTheme()
     }
 }
 add_action('after_switch_theme', "doOnSwitchTheme");
-
-
 
 
 function showNav($name)
