@@ -40,29 +40,11 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Blog</a>
-                    </li>
+                    <?php showNav("Main menu") ?>
                 </ul>
 
                 <ul class="navbar-nav ml-auto">
-                    <?php 
-                    $menu = wp_get_nav_menu_items("Social Menu");
-                    $menu_items = $menu ? $menu : array();
-
-                    foreach ($menu_items as $item): ?>
-
-                    <li class="nav-item">
-                        <a class="nav-link" href="<?= $item->url ?>" target="<?= $item->target ?>"><?= $item->title ?></a>
-                    </li>
-
-                    <?php endforeach; ?>
+                    <?php showNav("Social menu") ?>
                 </ul>
 
             </div>

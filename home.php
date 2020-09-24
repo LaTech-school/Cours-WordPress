@@ -15,6 +15,13 @@
 <?php get_header(); ?>
 
 
+<?php
+
+$page = get_page_by_title("Ma superbe page WP !!!");
+
+print_r($page);
+
+?>
 
 <!-- ----------------------------------------------------------------------- -->
         contenu

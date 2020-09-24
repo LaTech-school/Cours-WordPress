@@ -12,4 +12,4 @@
 //======================================================================
 ?>
 
-sidebar
+Ici on ajouter les elemnts HTML de ma sidebar
