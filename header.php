@@ -53,7 +53,7 @@
 
                 <ul class="navbar-nav ml-auto">
                     <?php 
-                    $menu = wp_get_nav_menu_items("Sociale Menu");
+                    $menu = wp_get_nav_menu_items("Social Menu");
                     $menu_items = $menu ? $menu : array();
 
                     foreach ($menu_items as $item): ?>
@@ -68,11 +68,6 @@
             </div>
         </nav>
     </header>
-
-
-    <?php 
-    var_dump( wp_get_nav_menu_items("Sociale Menu") ) 
-    ?>
 
     <!-- Contenu du site -->
     <div class="main-content">
